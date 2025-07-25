@@ -11,7 +11,7 @@
 [![Node.js](https://img.shields.io/badge/node-%3E%3D16.0.0-brightgreen.svg)](https://nodejs.org/)
 [![Express](https://img.shields.io/badge/express-4.x-lightgrey.svg)](https://expressjs.com/)
 
-[在线演示](https://omniverse-demo.ayuan.cloud) • [完整文档](doit.md) • [更新日志](#更新日志) • [快速开始](#快速开始)
+[在线演示](https://chat.ayuan.cloud) • [完整文档](README.md) • [更新日志](#更新日志) • [快速开始](#快速开始)
 
 </div>
 
