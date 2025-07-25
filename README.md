@@ -274,7 +274,6 @@ omniverse/
 ├── package.json     # 项目配置
 ├── .env.example     # 环境变量模板
 ├── .gitignore       # Git忽略文件
-├── doit.md         # 详细部署文档
 └── README.md       # 项目说明
 ```
 
@@ -312,7 +311,6 @@ A: 支持所有现代浏览器和设备，包括桌面、平板、手机。
 
 ### v2.2 (2025-07-24) - 开源发布版
 **🎉 开源发布**
-- ✅ 清理所有敏感信息，适配开源发布
 - ✅ 提供完整的环境变量模板
 - ✅ 完善的文档和使用说明
 
@@ -331,7 +329,7 @@ A: 支持所有现代浏览器和设备，包括桌面、平板、手机。
 我们欢迎任何形式的贡献！
 
 ### 贡献方式
-1. **报告问题**: 在 [Issues](https://github.com/ayuancloud/omniverse/issues) 页面报告bug或提出建议
+1. **报告问题**: 在 [Issues](https://github.com/ayuancloud/OmniVerse/issues) 页面报告bug或提出建议
 2. **功能请求**: 提出新功能的想法和需求
 3. **代码贡献**: 提交Pull Request修复问题或添加功能
 4. **文档改进**: 帮助完善文档和说明
@@ -366,23 +364,22 @@ A: 支持所有现代浏览器和设备，包括桌面、平板、手机。
 
 **阿远 (AYuan)**
 - 🌐 网站: [ayuan.cloud](https://ayuan.cloud)
-- 📧 邮箱: [hello@ayuan.cloud](mailto:hello@ayuan.cloud)
+- 📧 邮箱: [ayuancloud@163.com](mailto:ayuancloud@163.com)
 - 🐙 GitHub: [@ayuancloud](https://github.com/ayuancloud)
 
 ## 📞 支持
 
 如果您在使用过程中遇到问题：
 
-1. **查看文档**: [完整部署文档](doit.md)
-2. **搜索问题**: 在 [Issues](https://github.com/ayuancloud/omniverse/issues) 中搜索
-3. **提交问题**: 创建新的 Issue 描述问题
-4. **联系作者**: 通过邮箱或GitHub联系
+1. **搜索问题**: 在 [Issues](https://github.com/ayuancloud/omniverse/issues) 中搜索
+2. **提交问题**: 创建新的 Issue 描述问题
+3. **联系作者**: 通过邮箱或GitHub联系
 
 ## ⭐ Star 历史
 
 如果这个项目对您有帮助，请给它一个 ⭐️！
 
-[![Stargazers over time](https://starchart.cc/ayuancloud/omniverse.svg)](https://starchart.cc/ayuancloud/omniverse)
+[![Stargazers over time](https://starchart.cc/ayuancloud/OmniVerse.svg)](https://starchart.cc/ayuancloud/OmniVerse)
 
 ---
 
@@ -394,9 +391,9 @@ A: 支持所有现代浏览器和设备，包括桌面、平板、手机。
 
 *OmniVerse万物聚合体 - 让AI对话更简单、更安全、更智能*
 
-[![Star](https://img.shields.io/github/stars/ayuancloud/omniverse?style=social)](https://github.com/ayuancloud/omniverse)
-[![Fork](https://img.shields.io/github/forks/ayuancloud/omniverse?style=social)](https://github.com/ayuancloud/omniverse)
-[![Watch](https://img.shields.io/github/watchers/ayuancloud/omniverse?style=social)](https://github.com/ayuancloud/omniverse)
+[![Star](https://img.shields.io/github/stars/ayuancloud/omniverse?style=social)](https://github.com/ayuancloud/Omniverse)
+[![Fork](https://img.shields.io/github/forks/ayuancloud/omniverse?style=social)](https://github.com/ayuancloud/OmniVerse)
+[![Watch](https://img.shields.io/github/watchers/ayuancloud/omniverse?style=social)](https://github.com/ayuancloud/OmniVerse)
 
 </div>
 
@@ -481,7 +478,7 @@ OmniVerse v2.2 架构图
 
 ```bash
 # 1. 下载项目
-git clone https://github.com/your-repo/omniverse.git
+git clone https://github.com/ayuancloud/omniverse.git
 cd omniverse
 
 # 2. 运行自动部署脚本
@@ -889,7 +886,7 @@ find /backup -name "omniverse_*.tar.gz" -mtime +7 -delete
 
 **阿远 (AYuan)**
 - 网站: [ayuan.cloud](https://ayuan.cloud)
-- GitHub: [@your-github](https://github.com/your-github)
+- GitHub: [@your-github](https://github.com/ayuancloud)
 
 ## 🙏 致谢
 
@@ -915,7 +912,7 @@ find /backup -name "omniverse_*.tar.gz" -mtime +7 -delete
 
 **🌟 如果这个项目对您有帮助，请给它一个星标！**
 
-[![Star](https://img.shields.io/github/stars/your-repo/omniverse?style=social)](https://github.com/your-repo/omniverse)
+[![Star](https://img.shields.io/github/stars/ayuancloud/omniverse?style=social)](https://github.com/your-repo/omniverse)
 
 **Built with ❤️ by [AYuan](https://ayuan.cloud)**
 
