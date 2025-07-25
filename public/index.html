@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OmniVerse万物聚合体</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>OmniVerse万物聚合体</h1>
+            <div class="header-controls">
+                <select id="modelSelector" class="model-select">
+                    <option value="deepseek">DeepSeek</option>
+                    <option value="qwen">Qwen3-235B-A22B</option>
+                    <option value="grok">Grok-3</option>
+                    <option value="gpt4o-mini">GPT-4o-mini</option>
+                </select>
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path id="theme-icon" d="M12 3V4M12 20V21M18.364 5.636L17.656 6.344M6.344 17.656L5.636 18.364M21 12H20M4 12H3M18.364 18.364L17.656 17.656M6.344 6.344L5.636 5.636"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="chat-container" id="chatContainer"></div>
+        
+        <div class="input-container">
+            <textarea 
+                class="input-box" 
+                placeholder="输入你的问题..." 
+                id="input" 
+                rows="1"
+                oninput="autoResize(this)"
+                onkeydown="handleKeyDown(event)"
+            ></textarea>
+            <button class="send-btn" id="sendBtn" onclick="sendMessage()">发送</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
