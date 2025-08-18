@@ -15,7 +15,7 @@ let models = [
         id: 'deepseek',
         name: 'DeepSeek',
         modelType: 'deepseek-chat',
-        apiUrl: 'https://api.deepseek.com/v1/chat/completions',
+        baseUrl: 'https://api.deepseek.com',
         apiKey: process.env.DEEPSEEK_API_KEY || '',
         avatar: 'bot.png'
     },
@@ -23,7 +23,7 @@ let models = [
         id: 'qwen',
         name: 'Qwen3-235B-A22B',
         modelType: 'Qwen/Qwen3-235B-A22B',
-        apiUrl: 'https://api.siliconflow.cn/v1/chat/completions',
+        baseUrl: 'https://api.siliconflow.cn',
         apiKey: process.env.QWEN_API_KEY || '',
         avatar: 'bot1.png'
     },
@@ -31,7 +31,7 @@ let models = [
         id: 'grok',
         name: 'Grok-3',
         modelType: 'grok-3',
-        apiUrl: 'https://cn-api.bltcy.cn/v1/chat/completions',
+        baseUrl: 'https://cn-api.bltcy.cn',
         apiKey: process.env.GROK_API_KEY || '',
         avatar: 'bot3.png'
     },
@@ -39,7 +39,7 @@ let models = [
         id: 'gpt4o-mini',
         name: 'GPT-4o-mini',
         modelType: 'gpt-4o-mini',
-        apiUrl: 'https://api.openai.com/v1/chat/completions',
+        baseUrl: 'https://api.openai.com',
         apiKey: process.env.GPT4O_API_KEY || '',
         avatar: 'bot4.png'
     }
@@ -110,11 +110,12 @@ app.post('/api/chat', async (req, res) => {
     }
 
     try {
-        console.log('Making API request to:', selectedModel.apiUrl);
+        const apiUrl = `${selectedModel.baseUrl.replace(/\/$/, '')}/v1/chat/completions`;
+        console.log('Making API request to:', apiUrl);
         console.log('Model type:', selectedModel.modelType);
         console.log('Conversation length:', conversation.length);
-        
-        const response = await axios.post(selectedModel.apiUrl, {
+
+        const response = await axios.post(apiUrl, {
             model: selectedModel.modelType,
             messages: conversation,
             max_tokens: 1000,
@@ -145,7 +146,7 @@ app.post('/api/chat', async (req, res) => {
 
     } catch (error) {
         console.error('AI API Error:', error.message);
-        console.error('API URL:', selectedModel.apiUrl);
+        console.error('API URL:', `${selectedModel.baseUrl}/v1/chat/completions`);
         console.error('Model Type:', selectedModel.modelType);
         console.error('Error details:', error.response?.data || error.code);
         
@@ -282,22 +283,22 @@ app.get('/api/admin/models', verifyAdmin, (req, res) => {
 });
 
 app.post('/api/admin/models', verifyAdmin, (req, res) => {
-    const { name, modelType, apiUrl, apiKey, avatar } = req.body;
-    
-    if (!name || !modelType || !apiUrl || !apiKey) {
+    const { name, modelType, baseUrl, apiKey, avatar } = req.body;
+
+    if (!name || !modelType || !baseUrl || !apiKey) {
         return res.status(400).json({
             success: false,
-            error: '模型名称、模型类型、API地址和密钥都是必填的'
+            error: '模型名称、模型类型、Base URL和密钥都是必填的'
         });
     }
 
     const id = name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
-    
+
     const newModel = {
         id: id,
         name: name,
         modelType: modelType,
-        apiUrl: apiUrl,
+        baseUrl: baseUrl,
         apiKey: apiKey,
         avatar: avatar || 'bot.png'
     };

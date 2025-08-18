@@ -369,8 +369,8 @@
                     <input type="text" id="modelType" placeholder="例如: gpt-4（API请求时使用的模型名）" required>
                 </div>
                 <div class="form-group">
-                    <label for="modelUrl">API地址:</label>
-                    <input type="url" id="modelUrl" placeholder="例如: https://api.openai.com/v1/chat/completions" required>
+                    <label for="modelBaseUrl">Base URL:</label>
+                    <input type="url" id="modelBaseUrl" placeholder="例如: https://api.openai.com" required>
                 </div>
                 <div class="form-group">
                     <label for="modelKey">API密钥:</label>
@@ -622,7 +622,7 @@
                                 <h4>${model.name}</h4>
                                 <p>ID: ${model.id}</p>
                                 <p>模型类型: ${model.modelType || 'N/A'}</p>
-                                <p>URL地址: ${model.apiUrl}</p>
+                                <p>Base URL: ${model.baseUrl}</p>
                                 <p>头像: ${model.avatar || 'bot.png'}</p>
                             </div>
                         </div>
@@ -635,7 +635,7 @@
             async addModel() {
                 const name = document.getElementById('modelName').value;
                 const modelType = document.getElementById('modelType').value;
-                const apiUrl = document.getElementById('modelUrl').value;
+                const baseUrl = document.getElementById('modelBaseUrl').value;
                 const apiKey = document.getElementById('modelKey').value;
                 const avatar = document.getElementById('modelAvatar').value;
 
@@ -646,7 +646,7 @@
                             'Content-Type': 'application/json',
                             'Authorization': `Bearer ${this.authToken}`
                         },
-                        body: JSON.stringify({ name, modelType, apiUrl, apiKey, avatar })
+                        body: JSON.stringify({ name, modelType, baseUrl, apiKey, avatar })
                     });
 
                     if (response.status === 401) {
