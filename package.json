@@ -26,18 +26,18 @@
     "multi-model"
   ],
   "author": {
-    "name": "AYuan",
-    "email": "hello@ayuan.cloud",
-    "url": "https://ayuan.cloud"
+    "name": "OmniVerse",
+    "email": "",
+    "url": ""
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ayuancloud/omniverse.git"
+    "url": "https://github.com/example/omniverse.git"
   },
-  "homepage": "https://github.com/ayuancloud/omniverse#readme",
+  "homepage": "https://github.com/example/omniverse#readme",
   "bugs": {
-    "url": "https://github.com/ayuancloud/omniverse/issues"
+    "url": "https://github.com/example/omniverse/issues"
   },
   "engines": {
     "node": ">=16.0.0",

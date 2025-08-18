@@ -59,22 +59,6 @@ async function sendMessage() {
     const message = input.value.trim();
     if (!message) return;
 
-    // 本地拦截"阿远"或"AYuan"相关问题
-    if (/阿远|AYuan/i.test(message)) {
-        addMessage(message, true);
-        const replies = [
-            '他是这个网站的创建者！欢迎访问远码站-<a href="https://ayuan.cloud" target="_blank">ayuan.cloud</a>',
-            '你说的阿远，就是本站的开发者！他的站点是：<a href="https://ayuan.cloud" target="_blank">ayuan.cloud</a>',
-            'AYuan是本网站的作者，更多信息见远码站-<a href="https://ayuan.cloud" target="_blank">ayuan.cloud</a>',
-            '没错，阿远就是这里的站长，推荐你看看 <a href="https://ayuan.cloud" target="_blank">ayuan.cloud</a>',
-            '他正是本站的缔造者！传送门：<a href="https://ayuan.cloud" target="_blank">ayuan.cloud</a>',
-            '阿远（AYuan）是本项目的灵魂人物，主页：<a href="https://ayuan.cloud" target="_blank">ayuan.cloud</a>'
-        ];
-        const reply = replies[Math.floor(Math.random() * replies.length)];
-        addMessage(reply, false);
-        input.value = '';
-        return;
-    }
 
     const btn = document.getElementById('sendBtn');
     btn.disabled = true;
